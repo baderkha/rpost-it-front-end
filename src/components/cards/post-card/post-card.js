@@ -14,6 +14,9 @@ const PostCard = ({
     onLikeClick,
     onDislikeClick,
     onCommentclick,
+    hideFooter = false,
+    marginBottom = '0px',
+    borderRadiusDisable = false,
 }) => {
     const [counters, setCounters] = useState({
         likeCount,
@@ -21,14 +24,18 @@ const PostCard = ({
         commentCount,
     });
     const onLikeClickChild = (ev) => {
-        
         onLikeClick && onLikeClick(ev);
-    }
+    };
+    console.log(borderRadiusDisable)
     return (
         <Card
-            className="text-center"
+            className={`text-center ${borderRadiusDisable?"rounded-0":""}`}
             style={{
-                margin: '0.5em',
+                marginTop: '0.5em',
+                marginLeft: '0.5em',
+                marginRight: '0.5em',
+                marginBottom: marginBottom,
+                borderRadius: borderRadiusDisable ? '0px important' : undefined,
             }}
         >
             <Card.Header>
@@ -57,27 +64,32 @@ const PostCard = ({
                     Updated {updatedAt}
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="text-muted">
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignContent: 'center',
-                    }}
-                >
-                    <Button variant="primary" onClick={onLikeClick}>
-                        {counters.likeCount + ' '}
-                        <HandThumbsUp></HandThumbsUp>
-                    </Button>
-                    <Button variant="secondary" onClick={onCommentclick}>
-                        <ChatLeftDotsFill></ChatLeftDotsFill> {counters.commentCount + ' '} Comments
-                    </Button>
-                    <Button variant="danger" onClick={onDislikeClick}>
-                        {counters.dislikeCount + ' '}
-                        <HandThumbsDown></HandThumbsDown>
-                    </Button>
-                </div>
-            </Card.Footer>
+            {hideFooter ? (
+                <></>
+            ) : (
+                <Card.Footer className="text-muted">
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignContent: 'center',
+                        }}
+                    >
+                        <Button variant="primary" onClick={onLikeClick}>
+                            {counters.likeCount + ' '}
+                            <HandThumbsUp></HandThumbsUp>
+                        </Button>
+                        <Button variant="secondary" onClick={onCommentclick}>
+                            <ChatLeftDotsFill></ChatLeftDotsFill> {counters.commentCount + ' '}{' '}
+                            Comments
+                        </Button>
+                        <Button variant="danger" onClick={onDislikeClick}>
+                            {counters.dislikeCount + ' '}
+                            <HandThumbsDown></HandThumbsDown>
+                        </Button>
+                    </div>
+                </Card.Footer>
+            )}
         </Card>
     );
 };
