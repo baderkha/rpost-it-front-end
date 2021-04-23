@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/nav-bar/nav-bar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PostCard from './components/cards/post-card/post-card';
+import CommunityHeader from './components/community-header/communityHeader';
+import MakePostCard from './components/cards/make-post-card/make-post-card';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <NavBar isLoggedIn={false} userName="rakan "></NavBar>
+            <CommunityHeader></CommunityHeader>
+            <MakePostCard></MakePostCard>
+            <PostCard
+                title={'Hello i am drowining please help'}
+                communityTitle={'r/griefers-inc'}
+                postedBy={'u/ahmad'}
+                updatedAt={'2 days ago'}
+                commentCount={141}
+                text={'Hello there i am experiencing drowing pls help . k thx bye'}
+                likeCount = {123}
+                dislikeCount = {134}
+            ></PostCard>
+            <PostCard
+                title={'Hello i am drowining please help'}
+                communityTitle={'r/griefers-inc'}
+                postedBy={'u/ahmad'}
+                updatedAt={'2 days ago'}
+                commentCount={10}
+                text={'Hello there i am experiencing drowing pls help . k thx bye'}
+            ></PostCard>
+            <PostCard
+                title={'Hello i am drowining please help'}
+                communityTitle={'r/griefers-inc'}
+                postedBy={'u/ahmad'}
+                updatedAt={'2 days ago'}
+                commentCount={5}
+                text={'Hello there i am experiencing drowing pls help . k thx bye'}
+            ></PostCard>
+        </div>
+    );
 }
 
 export default App;
