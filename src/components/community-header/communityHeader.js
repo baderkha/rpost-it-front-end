@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
+import CircularImage from '../image/circular-image/circular-image';
 
 const CommunityHeader = () => {
     return (
@@ -11,7 +12,7 @@ const CommunityHeader = () => {
                         height: '100px',
                         width: 'inherit',
                         position: 'relative',
-                        margin:'-1px'
+                        margin: '-1px',
                     }}
                 >
                     <Image
@@ -19,10 +20,8 @@ const CommunityHeader = () => {
                             width: '100%',
                             overflow: 'hidden',
                             marginTop: '0px',
-                            
                         }}
                         variant="top"
-                        
                         src="https://wallpaperaccess.com/full/32056.jpg"
                     />
                 </div>
@@ -33,29 +32,17 @@ const CommunityHeader = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <div
-                        style={{
-                            overflow: 'hidden',
-                            height: '72px',
-                            width: '72px',
-                            position: 'relative',
-                        }}
-                    >
-                        <Image
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                overflow: 'hidden',
-                            }}
-                            src="https://wallpaperaccess.com/full/32056.jpg"
-                            roundedCircle
-                        ></Image>
-                    </div>
+                    <CircularImage imageUrl="https://wallpaperaccess.com/full/32056.jpg"></CircularImage>
+
                     <div>
-                        <Card.Title style={{ textAlign: 'left', marginLeft: '10px' }}>
+                        <Card.Title
+                            style={{ textAlign: 'left', marginLeft: '10px' }}
+                        >
                             Hello meow?
                         </Card.Title>
-                        <Card.Text style={{ textAlign: 'left', marginLeft: '10px' }}>
+                        <Card.Text
+                            style={{ textAlign: 'left', marginLeft: '10px' }}
+                        >
                             r/MeowMeow
                         </Card.Text>
                     </div>
