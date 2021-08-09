@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import { Camera } from 'react-bootstrap-icons';
 import CircularImage from '../../image/circular-image/circular-image';
+import styles from './style.module.css';
 
 const MakePostCard = ({ avatar }) => {
     return (

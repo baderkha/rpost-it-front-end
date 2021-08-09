@@ -1,0 +1,29 @@
+.commentCardContainer {
+    text-align: center;
+    border-radius: 0px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: -0.2em;
+}
+
+.commentCardBody {
+    text-align: left;
+    justify-content: space-between;
+    display: flex;
+}
+
+.commentCardText {
+    text-align: left;
+}
+
+.cardFooter {
+    background: white;
+    border: 0px;
+    color: #6c757d;
+}
+
+.footerButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}

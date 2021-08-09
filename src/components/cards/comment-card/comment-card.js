@@ -1,6 +1,12 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { HandThumbsDown, HandThumbsUp, ChatLeftDotsFill,Arrow90degLeft } from 'react-bootstrap-icons';
+import styles from './style.module.css';
+import {
+    HandThumbsDown,
+    HandThumbsUp,
+    ChatLeftDotsFill,
+    Arrow90degLeft,
+} from 'react-bootstrap-icons';
 import { useState } from 'react';
 const CommentCard = ({
     text,
@@ -24,41 +30,24 @@ const CommentCard = ({
     return (
         <Card
             className="text-center rounded-0"
-            style={{
-                marginLeft : '0.5em',
-                marginRight : '0.5em',
-                marginTop:'-0.2em'
-            }}
+            className={styles.commentCardContainer}
         >
             <Card.Body>
-                <div
-                    style={{
-                        textAlign: 'left',
-                        justifyContent: 'space-between',
-                        display: 'flex',
-                    }}
-                >
+                <div className={styles.commentCardBody}>
                     <Card.Text>{postedBy} </Card.Text>
                     <Card.Text>{updatedAt} </Card.Text>
                 </div>
 
                 <br></br>
-                <Card.Text style={{ textAlign: 'left' }}>{text}</Card.Text>
+                <Card.Text className={styles.commentCardText}>{text}</Card.Text>
             </Card.Body>
 
-            <Card.Footer className="text-muted" style={{
-                background:"white",
-                border:"0px"
-            }}>
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignContent: 'center',
-                    }}
-                >
-                   
-                    <Button variant="outline-secondary" onClick={onCommentclick}>
+            <Card.Footer className={styles.cardFooter}>
+                <div className={styles.footerButtonContainer}>
+                    <Button
+                        variant="outline-secondary"
+                        onClick={onCommentclick}
+                    >
                         <Arrow90degLeft height="2em"></Arrow90degLeft> Reply
                     </Button>
                     <Button variant="outline-primary" onClick={onLikeClick}>
