@@ -9,8 +9,7 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route path='/login' exact component={LoginView}/>
-                <Route path='/topic' exact component={TopicPage}/>
+                <Route path='/home' exact component={TopicPage}/>
             </Switch>
             
         </Router>

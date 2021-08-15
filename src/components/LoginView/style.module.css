@@ -2,18 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.Login__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    width:30%;
-    border-radius: 5px;
-    border: 1px solid grey;
-    margin-top: 2rem;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .inputField {
@@ -26,4 +15,16 @@
 
 .forgotPass {
     margin:1rem;
+}
+
+.modalBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* add bsPrefix={styles.buttonsContainer} to component for custom styles */
+.buttonsContainer {
+    display:flex;
+    justify-content: center;
 }
