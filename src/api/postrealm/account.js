@@ -1,9 +1,6 @@
 import { BaseApi } from "./baseApi";
 
-app.Post("/accounts", http.FiberRouteV2(ctrlr.Account.Create)) // have verification ?
-app.Get("/accounts", http.FiberRouteV2(ctrlr.Account.Search))
-app.Get("/accounts/:id/communties", http.FiberRouteV2(ctrlr.Community.GetByAccountId))
-app.Get("/accounts/:id", http.FiberRouteV2(ctrlr.Account.GetById))
+
 
 /**
  * @description Account Api , has access to creating , updating ,
